@@ -1,25 +1,41 @@
+//Create the Thought API routes
+
 const router = require('express').Router();
-//Import the methods from the thought-controller file 
-const { addComment, removeComment, addReply, removeReply } = require('../../controllers/comment-controller');
+
+const {
+    getAllThoughts,
+    getThoughtById,
+    addThought,
+    updateThought,
+    removeThought,
+    addReaction,
+    removeReaction
+  } = require('../../controllers/thought-controller');
 
 
-
-// /api/comments/<pizzaId>
+// Set up GET all and POST at /api/thoughts
 router
-    .route('/:pizzaId')
-    .post(addComment);
+  .route('/')
+  .get(getAllThoughts)
+  .post(addThought);
 
-// /api/comments/<pizzaId>/<commentId>
+// Set up GET one, PUT, and DELETE at /api/thoughts/:id
 router
-    .route('/:pizzaId/:commentId')
-    .put(addReply)
-    .delete(removeComment);
+  .route('/:id')
+  .get(getThoughtById)
+  .put(updateThought)
+  .delete(removeThought);
 
-//delete route to handle removeReply
+  //Setup for /api/thoughts/:thoughtId/reactions
 
-router
-    .route(':/pizzaId/:commentId/:replyId')
-    .delete(removeReply);
+  router
+  .route('/:thoughtId/reactions')
+  .post(addReaction)
 
+
+  //Setup for /api/thoughts/:thoughtId/reactions/:reactionId
+  router
+  .route('/:thoughtId/reactions/:reactionId')
+  .delete(removeReaction)
 
 module.exports = router;
