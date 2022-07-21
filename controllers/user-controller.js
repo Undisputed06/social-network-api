@@ -3,7 +3,7 @@ const { User } = require('../models');
 
 //create the CRUD methods
 
-const UserController = {
+const userrController = {
     // get all users
     getAllUsers(req, res) {
       User.find({})
@@ -47,7 +47,7 @@ const UserController = {
         })
         .catch(err => res.status(400).json(err));
 },
-  // delete pizza
+  // delete User
     deleteUser({ params }, res) {
     User.findOneAndDelete({ _id: params.id })
       .then(dbUserData => {
@@ -61,4 +61,4 @@ const UserController = {
   }
   };
 
-module.exports = UserController;
+module.exports = userController;
