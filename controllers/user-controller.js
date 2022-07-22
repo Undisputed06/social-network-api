@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Thought } = require("../models");
 
 //create the CRUD methods
 
@@ -75,9 +75,8 @@ const userController = {
           res.status(404).json({ message: "No User found with this id!" });
           return;
         }
-        Thought.deleteMany({ username: dbUserData.username})
-        .then(() => {
-            res.json( {message: 'User and thoughts have been deleted'});
+        Thought.deleteMany({ username: dbUserData.username}).then(() => {
+            res.json({message: 'User and thoughts have been deleted'});
         })
       })
       .catch((err) => res.json(err));
