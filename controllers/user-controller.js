@@ -80,7 +80,7 @@ const userController = {
             res.json( {message: 'User and thoughts have been deleted'});
         })
       })
-      .catch((err) => res.status(400).json(err));
+      .catch((err) => res.json(err));
   },
 
   //add friend
