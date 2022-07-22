@@ -117,7 +117,7 @@ const thoughtController = {
           res.status(404).json({ message: "No thought found with this id!" });
           return;
         }
-        res.json(dbthoughtData);
+        res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },

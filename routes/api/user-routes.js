@@ -29,7 +29,7 @@ router
   //Setup for /api/users/:userId/friends/:friendId
 
   router
-  .route('/:id/friends/:friendId')
+  .route('/:userId/friends/:friendId')
   .post(addFriend)
   .delete(deleteFriend)
 
