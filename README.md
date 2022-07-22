@@ -25,7 +25,7 @@ Because this application won’t be deployed, you’ll also need to create a wal
 
   ## Usage 
   
-
+  ![Screen Shot 2022-07-22 at 12 43 21 PM](https://user-images.githubusercontent.com/52983305/180495034-4f4ef220-84c3-4e40-8384-f9bfd09c19a6.png)
   
 
   [Link to Video Demo](https://drive.google.com/file/d/1VKm6PVVSwtdrcfLuffmEoGe-vfMT16Xr/view)
